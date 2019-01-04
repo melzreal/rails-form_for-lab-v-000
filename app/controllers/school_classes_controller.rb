@@ -17,4 +17,16 @@ class SchoolClassesController < ApplicationController
     @school_class.save
     redirect_to school_class_path(@school_class)
   end
+  
+  def edit
+    @school_class = School_class.find(params[:id])
+  end
+
+  def update
+    @school_class = School_class.find(params[:id])
+    @school_class.update(first_name: params[:student][:first_name], last_name: params[:student][:last_name])
+    redirect_to school_class_path(@school_class)
+  end
+
+
 end
