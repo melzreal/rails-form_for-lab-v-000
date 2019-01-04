@@ -547,3 +547,22 @@ Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8
 Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 143.252.80.100 at 2019-01-04 12:25:20 +0000
 Started GET "/assets/turbolinks.self-569ee74eaa15c1e2019317ff770b8769b1ec033a0f572a485f64c82ddc8f989e.js?body=1" for 143.252.80.100 at 2019-01-04 12:25:20 +0000
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 143.252.80.100 at 2019-01-04 12:25:20 +0000
+Started POST "/students" for 143.252.80.100 at 2019-01-04 12:25:26 +0000
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mDtsFLpDAoTCZ8v/c14HpC0R77VJa1u1aqRB1Uv0wayAT4JUaPXG+77VGgMNbVfL8DOG/aWyGj0uUjD1/eVHTQ==", "student"=>{"first_name"=>"Abel", "last_name"=>"Lincoln"}, "commit"=>"Create Student"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "students" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2019-01-04 12:25:26.350284"], ["updated_at", "2019-01-04 12:25:26.350284"]]
+  [1m[35m (18.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://178.128.194.189:33430/students/3
+Completed 302 Found in 23ms (ActiveRecord: 18.7ms)
+
+
+Started GET "/students/3" for 143.252.80.100 at 2019-01-04 12:25:26 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.2ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering students/show.html.erb within layouts/application
+  Rendered students/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 20ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
